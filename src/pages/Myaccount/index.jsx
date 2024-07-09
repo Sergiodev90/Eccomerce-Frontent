@@ -1,4 +1,4 @@
-function Home(){
+function Myaccount(){
     return (
         <div>
             <h1>My account</h1>
@@ -6,4 +6,4 @@ function Home(){
     );
 }
 
-export {Home}
+export {Myaccount}

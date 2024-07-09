@@ -1,4 +1,4 @@
-function Home(){
+function NotFound(){
     return (
         <div>
             <h1>Not found</h1>
@@ -6,4 +6,4 @@ function Home(){
     );
 }
 
-export {Home}
+export {NotFound}

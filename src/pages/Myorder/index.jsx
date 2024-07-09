@@ -1,4 +1,4 @@
-function Home(){
+function Myorder(){
     return (
         <div>
             <h1>Myorder</h1>
@@ -6,4 +6,4 @@ function Home(){
     );
 }
 
-export {Home}
+export {Myorder}
