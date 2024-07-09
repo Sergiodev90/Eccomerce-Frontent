@@ -1,7 +1,7 @@
 function Home(){
     return (
         <div>
-            <h1>My account</h1>
+            <h1>Myorders</h1>
         </div>
     );
 }
