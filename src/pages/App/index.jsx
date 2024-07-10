@@ -5,11 +5,13 @@ import { Myorder } from '../Myorder'
 import { Myorders } from '../Myorders'
 import { NotFound } from '../NotFound'
 import { Signin } from '../Signin'
+import { NavBar } from '../../Components/Navbar'
 import './App.css'
 
 
 
 const AppRoutes = () =>{
+  
   
   let routes = useRoutes([
     { path: '/', element: <Home /> },
@@ -29,9 +31,10 @@ const App  = () => {
 
   return (
     <>
-
+      
       <BrowserRouter>
         <AppRoutes />
+        <NavBar/>
       </BrowserRouter>
     </>
   )
