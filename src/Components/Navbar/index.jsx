@@ -1,13 +1,12 @@
 import { NavItem } from "../NavItem";
 import { ShoppingCartContext } from "../../context";
 import { ShoppingBagIcon } from "@heroicons/react/16/solid";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+
 
 const NavBar = () =>{
 
     const {open_closeCheckoutSideMenu,count} = useContext(ShoppingCartContext)
-
-    
 
     return(
         <nav className="flex justify-between items-center w-full fixed top-0 z-10 py-5 px-8 text-sm font-semibold ">
@@ -16,23 +15,21 @@ const NavBar = () =>{
                     <NavItem  to='/'>Shopi</NavItem>
                 </li>   
                 <li>
-                    <NavItem to='/All' >¡All</NavItem>
+                    <NavItem to='/' >All</NavItem>
                 </li>
                 <li>
-                    <NavItem to='/clothes' >Clothes</NavItem>
+                    <NavItem to="/category/women's-clothing" >Women's Clothing</NavItem>
                 </li>
                 <li>
-                    <NavItem to='/electronics'>Electronics</NavItem>
+                    <NavItem to="/category/men's-clothing" >Men's Clothing</NavItem>
                 </li>
                 <li>
-                    <NavItem to='/furnitures'>Furnitures</NavItem>
+                    <NavItem to="/category/jewelery"v>Jewelery</NavItem>
                 </li>
                 <li>
-                    <NavItem to='/toys'>Toys</NavItem>
+                    <NavItem to="/category/electronics" >Electronics</NavItem>
                 </li>
-                <li>
-                    <NavItem to='/others'>Others</NavItem>
-                </li>
+
             </ul>
             <ul className="flex items-center gap-3">
                 <li className="text-black/60">
