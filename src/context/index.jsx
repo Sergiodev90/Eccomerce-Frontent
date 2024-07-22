@@ -1,11 +1,30 @@
-import { createContext } from "react";
-import { useState } from "react";
+import { createContext,useState, useEffect } from "react";
+import { api } from "../Api";
+import axios from "axios";
 
 
 
 const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({children}) =>{
+
+    //the state to get the items of the api
+
+    const [items, setItems] = useState(null);
+
+    //effect to get the data
+    useEffect(()=>{
+
+        const fetchData = async() =>{
+            try{
+                const response = await axios.get(`${api}/products`)
+                setItems(response.data)
+            }catch(error){
+                console.error(error)
+            }
+        }
+        fetchData()
+    }, [])
 
     //states of count on the car market
 
@@ -45,7 +64,9 @@ export const ShoppingCartProvider = ({children}) =>{
             setCartProducts,
             DeteleteOrderCard,
             order,
-            setOrder
+            setOrder,
+            items,
+            setItems
             }}>
             {children}
         </ShoppingCartContext.Provider>

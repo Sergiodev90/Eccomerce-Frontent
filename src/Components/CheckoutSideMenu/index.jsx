@@ -7,6 +7,7 @@ import { totalprice } from "../../utils";
 import "./styles.css";
 
 const CheckoutSideMenu = () => {
+  let i = 0
   const {
     isCheckoutSideMenuOpen,
     open_closeCheckoutSideMenu,
@@ -20,9 +21,11 @@ const CheckoutSideMenu = () => {
 
   const handleCheckout = () => {
     const orderToAdd = {
+      id:i ++,
       date: new Date(),
       products: cartProducts,
-      totalProducts: totalprice(cartProducts),
+      totalProducts: cartProducts.length,
+      totalPrice: totalprice(cartProducts)
     };
     setOrder([...order, orderToAdd]);
     setCount(0);
@@ -60,7 +63,7 @@ const CheckoutSideMenu = () => {
               ${totalprice(cartProducts)}
             </span>
           </p>
-          <Link to = "/myorders/last">
+          <Link to = "/my-orders/last">
             <button
               className="w-full py-3 bg-green-400 text-white rounded-lg  "
               onClick={() => handleCheckout()}
