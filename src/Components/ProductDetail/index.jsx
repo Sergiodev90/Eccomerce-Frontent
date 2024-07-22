@@ -4,8 +4,8 @@ import { ShoppingCartContext } from "../../context";
 import "./ProductDetail.css"
 
 const ProductDetail = () =>{
-    const {isProductDetailOpen, closeProductDetail , productToShow} = useContext(ShoppingCartContext)
-    console.log("PRODUCT TO SHOW", productToShow)
+    const { open_closeProductDetail,isProductDetailOpen,
+        productToShow} = useContext(ShoppingCartContext)
 
     return (
         isProductDetailOpen &&(
@@ -13,7 +13,7 @@ const ProductDetail = () =>{
             <div className="flex justify-between items-center p-6">
                 <h2 className="font-medium text-xl">Details</h2>
                 <div>
-                    <XMarkIcon className="h-6 w-6 text-black cursor-pointer" onClick={closeProductDetail}></XMarkIcon>
+                    <XMarkIcon className="h-6 w-6 text-black cursor-pointer" onClick={open_closeProductDetail}></XMarkIcon>
                 </div>
             </div>
 

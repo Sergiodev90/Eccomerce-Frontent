@@ -1,12 +1,14 @@
 import { NavItem } from "../NavItem";
 import { ShoppingCartContext } from "../../context";
 import { ShoppingBagIcon } from "@heroicons/react/16/solid";
-import { CheckoutSideMenu } from "../CheckoutSideMenu";
 import { useContext } from "react";
 
 const NavBar = () =>{
 
-    const {count} = useContext(ShoppingCartContext)
+    const {open_closeCheckoutSideMenu,count} = useContext(ShoppingCartContext)
+
+    
+
     return(
         <nav className="flex justify-between items-center w-full fixed top-0 z-10 py-5 px-8 text-sm font-semibold ">
             <ul className="flex items-center gap-3">
@@ -46,11 +48,11 @@ const NavBar = () =>{
                     <NavItem to='/signin'>Sign in</NavItem>
                 </li>
                 <li>
-                <div className="flex">
+                <div className="flex" onClick={() => open_closeCheckoutSideMenu()}>
                     <ShoppingBagIcon className="h-6 w-6" >
                      </ShoppingBagIcon>
                     <span className=" bg-white border rounded-full w-6 h-6 flex justify-center">
-                    {count}
+                        {count}
                     </span>
                 </div>
   
