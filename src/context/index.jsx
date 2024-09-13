@@ -20,9 +20,6 @@ export const ShoppingCartProvider = ({children}) =>{
 
 
     console.log(`${Apitochange+currentPath}`)
-    function getBetter () {
-        
-    }
     //effect to get the data
     useEffect(()=>{
 

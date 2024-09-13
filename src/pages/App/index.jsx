@@ -1,5 +1,4 @@
-import { useRoutes, BrowserRouter } from 'react-router-dom'
-import { ShoppingCartProvider } from '../../context'
+import { useRoutes, BrowserRouter} from 'react-router-dom'
 import { Home } from '../Home'
 import { Myaccount } from '../Myaccount'
 import { Myorder } from '../Myorder'
@@ -26,7 +25,7 @@ const AppRoutes = () =>{
     { path: '/my-orders', element: <Myorders /> },
     { path: '/my-orders/last', element: <Myorder /> },
     { path: '/my-orders/:id', element: <Myorder /> },
-    { path: '/sign-in', element: <Signin /> },
+    { path: '/signin', element: <Signin /> },
     { path: '/*', element: <NotFound /> },
 
   ]);
